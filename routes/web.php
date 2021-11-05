@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Foundation\Application;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -13,19 +13,16 @@ use Inertia\Inertia;
 | routes are loaded by the RouteServiceProvider within a group which
 | contains the "web" middleware group. Now create something great!
 |
-*/
+ */
 
-Route::get('/', fn()=>redirect()->route('dashboard'));
+Route::get('/', fn() => redirect()->route('dashboard'));
 
-Route::middleware(['auth', 'verified'])->group(function(){
-    Route::get('/dashboard', fn()=>Inertia::render('Dashboard'))->name('dashboard');
+Route::middleware(['auth', 'verified'])->group(function () {
+    Route::get('/dashboard', fn() => Inertia::render('Dashboard'))->name('dashboard');
 
     // Users
-    Route::get('/users', fn()=>Inertia::render('Users/UsersList'))->name('users');
-
+    Route::get('/users', [UserController::class, 'index'])->name('users');
 
 });
 
-
-
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

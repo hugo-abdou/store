@@ -7,7 +7,7 @@ export const toggleDarkMode = useToggle(isDark)
 export const sidebarState = reactive({
     isOpen: window.innerWidth > 1024,
     isHovered: false,
-    handleHover:(value) => window.innerWidth > 1024 ? sidebarState.isHovered = value : null,
+    handleHover:(value) => window.innerWidth > 700 ? sidebarState.isHovered = value : null,
     handleWindowResize() {
         if (window.innerWidth <= 1024) {
             sidebarState.isOpen = false

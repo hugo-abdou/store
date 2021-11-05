@@ -1,8 +1,9 @@
 <template>
-	<div class="flex items-center justify-between flex-shrink-0 px-3">
+	<div class="flex items-center justify-between overflow-hidden flex-shrink-0 px-3">
 		<Link :href="route('dashboard')" class="inline-flex items-center gap-2">
 			<span class="sr-only">K-UI</span>
-			<ApplicationLogo aria-hidden="true" class="w-10 h-auto" />
+
+			<ApplicationLogo aria-hidden="true" class="min-w-[12rem] h-auto" />
 		</Link>
 
 		<Button
@@ -24,7 +25,7 @@
 				<circle cx="12" cy="12" r="8" />
 				<circle v-show="sidebarState.isOpen" cx="12" cy="12" r="3" />
 			</svg>
-			<XIcon aria-hidden="true" :class="['lg:hidden', iconSizeClasses]" />
+			<XIcon aria-hidden="true" v-show="sidebarState.isOpen" :class="['lg:hidden', iconSizeClasses]" />
 		</Button>
 	</div>
 </template>

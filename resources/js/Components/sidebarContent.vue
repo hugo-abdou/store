@@ -17,8 +17,6 @@
 
 		<SidebarCollapsible title="Dropdown">
 			<SidebarCollapsibleItem href="#" title="Link 1" :active="false" />
-			<SidebarCollapsibleItem href="#" title="Link 2" :active="true" />
-			<SidebarCollapsibleItem href="#" title="Link 3" :active="false" />
 		</SidebarCollapsible>
 	</PerfrectScrollbar>
 </template>

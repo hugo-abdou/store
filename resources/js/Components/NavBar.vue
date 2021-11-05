@@ -2,10 +2,12 @@
 	<nav
 		aria-label="secondary"
 		:class="[
-            'sticky top-0 z-10 px-6 py-4 bg-white flex items-center justify-between transition-transform duration-500 dark:bg-dark-eval-1',
+            'sticky top-0 z-40 px-6 py-4 bg-white flex items-center justify-between transition-transform duration-500 dark:bg-dark-eval-1',
             {
                 '-translate-y-full': scrolling.down,
                 'translate-y-0': scrolling.up,
+				'md:ml-64': sidebarState.isOpen || sidebarState.isHovered,
+                'md:ml-[4rem]':!sidebarState.isOpen && !sidebarState.isHovered,
             },
         ]"
 	>
@@ -96,7 +98,7 @@
 		</Button>
 
 		<Link :href="route('dashboard')">
-			<ApplicationLogo class="w-10 h-10" />
+			<ApplicationLogo class="h-10" />
 			<span class="sr-only">K UI</span>
 		</Link>
 
