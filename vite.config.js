@@ -9,10 +9,8 @@ const ASSET_URL = process.env.ASSET_URL || "";
 
 export default ({ command }) => ({
     plugins: [vue()],
-
     root: "resources",
     base: command === "build" ? `${ASSET_URL}/dist` : `${ASSET_URL}/`,
-
     build: {
         outDir: resolve(__dirname, "public/dist"),
         emptyOutDir: true,
@@ -22,7 +20,6 @@ export default ({ command }) => ({
             input: "/js/app.js",
         },
     },
-
     resolve: {
         alias: {
             "@": resolve(__dirname, "./resources/js/"),

@@ -4,11 +4,11 @@
 		v-if="href"
 		:href="href"
 		:class="[
-            'p-2 flex items-center gap-2 rounded-md transition-colors',
+            'p-2 flex items-center gap-2 rounded-md transition-colors active:shadow-sm',
             {
-                'text-gray-500 hover:text-gray-700 hover:bg-gray-100 dark:hover:text-gray-300 dark:hover:bg-dark-eval-2':
+                'text-gray-500 hover:text-gray-700 hover:shadow hover:bg-gray-100 dark:hover:text-gray-300 dark:hover:bg-dark-eval-2':
                     !active,
-                'text-white bg-purple-500 shadow-lg hover:bg-purple-600':
+                'text-white bg-indigo-400 shadow-groadis hover:bg-indigo-500':
                     active,
             },
         ]"

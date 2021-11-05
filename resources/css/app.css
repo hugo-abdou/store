@@ -1,3 +1,10 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@import './bgStyle.css';
+@layer base {
+    :root {
+        --groadis-color: 129, 140, 248;
+    }
+}

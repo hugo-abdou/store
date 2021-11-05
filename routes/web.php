@@ -15,17 +15,17 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Welcome', [
-        'canLogin' => Route::has('login'),
-        'canRegister' => Route::has('register'),
-        'laravelVersion' => Application::VERSION,
-        'phpVersion' => PHP_VERSION,
-    ]);
+Route::get('/', fn()=>redirect()->route('dashboard'));
+
+Route::middleware(['auth', 'verified'])->group(function(){
+    Route::get('/dashboard', fn()=>Inertia::render('Dashboard'))->name('dashboard');
+
+    // Users
+    Route::get('/users', fn()=>Inertia::render('Users/UsersList'))->name('users');
+
+
 });
 
-Route::get('/dashboard', function () {
-    return Inertia::render('Dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+
 
 require __DIR__.'/auth.php';

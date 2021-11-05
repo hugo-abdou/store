@@ -1,7 +1,9 @@
 <template>
-	<div class="min-h-screen flex flex-col justify-center items-center pt-6 bg-gray-100">
+	<div
+		class="min-h-screen flex flex-col justify-center items-center pt-6 bg-gray-100 dark:bg-dark-eval-1 bg-style"
+	>
 		<div
-			class="flex max-w-sm w-full mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 lg:max-w-4xl"
+			class="flex max-w-sm w-full mx-auto overflow-hidden bg-white rounded-lg shadow-lg dark:bg-dark-bg lg:max-w-4xl"
 		>
 			<div
 				class="hidden bg-cover lg:block lg:w-1/2"
@@ -22,6 +24,7 @@
 <script>
 import BreezeApplicationLogo from "@/Components/ApplicationLogo.vue";
 import { Link } from "@inertiajs/inertia-vue3";
+import { isDark } from "@/Composables";
 
 export default {
 	components: {

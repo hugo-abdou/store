@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div class="min-h-screen bg-gray-100 dark:bg-dark-bg">
+		<div class="min-h-screen bg-style bg-gray-100 dark:bg-dark-bg">
 			<nav-bar />
 			<!-- side bar -->
 			<side-bar />
@@ -10,14 +10,16 @@
 				:class="[
 					'duration-100',
 					{
-                		'ml-64': sidebarState.isOpen || sidebarState.isHovered,
-                		'ml-16':!sidebarState.isOpen && !sidebarState.isHovered,
+                		'md:ml-64': sidebarState.isOpen || sidebarState.isHovered,
+                		'md:ml-16':!sidebarState.isOpen && !sidebarState.isHovered,
             		}
 				]"
 				v-if="$slots.header"
 			>
 				<div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-					<slot name="header" />
+					<h2 class="font-semibold text-xl text-gray-500 leading-tight">
+						<slot name="header" />
+					</h2>
 				</div>
 			</header>
 
@@ -26,8 +28,8 @@
 				:class="[
 					'duration-100',
 					{
-                		'ml-64': sidebarState.isOpen || sidebarState.isHovered,
-                		'ml-16':!sidebarState.isOpen && !sidebarState.isHovered,
+                		'md:ml-64': sidebarState.isOpen || sidebarState.isHovered,
+                		'md:ml-16':!sidebarState.isOpen && !sidebarState.isHovered,
             		}
 				]"
 			>
@@ -65,3 +67,4 @@ export default {
 	},
 };
 </script>
+

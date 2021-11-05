@@ -14,17 +14,16 @@
 			@click="sidebarState.isOpen = !sidebarState.isOpen"
 			:srText="sidebarState.isOpen ? 'Close sidebar' : 'Open sidebar'"
 		>
-			<ArrowLeftIcon
-				aria-hidden="true"
-				v-show="sidebarState.isOpen"
-				:class="['hidden lg:block', iconSizeClasses]"
-			/>
-
-			<ArrowRightIcon
-				aria-hidden="true"
-				v-show="!sidebarState.isOpen"
-				:class="['hidden lg:block', iconSizeClasses]"
-			/>
+			<svg
+				viewBox="0 0 24 24"
+				fill="none"
+				stroke="currentColor"
+				stroke-width="2"
+				:class="['hidden hover:text-indigo-400 lg:block', iconSizeClasses]"
+			>
+				<circle cx="12" cy="12" r="8" />
+				<circle v-show="sidebarState.isOpen" cx="12" cy="12" r="3" />
+			</svg>
 			<XIcon aria-hidden="true" :class="['lg:hidden', iconSizeClasses]" />
 		</Button>
 	</div>
