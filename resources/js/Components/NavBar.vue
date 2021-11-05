@@ -2,7 +2,7 @@
 	<nav
 		aria-label="secondary"
 		:class="[
-            'sticky top-0 z-40 px-6 py-4 bg-white flex items-center justify-between transition-transform duration-500 dark:bg-dark-eval-1',
+            'sticky top-0 z-10 md:z-40 px-6 py-4 bg-white flex items-center justify-between transition-transform duration-500 dark:bg-dark-eval-1',
             {
                 '-translate-y-full': scrolling.down,
                 'translate-y-0': scrolling.up,

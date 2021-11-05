@@ -2,7 +2,7 @@
 	<PerfrectScrollbar
 		tagname="nav"
 		aria-label="main"
-		class="relative flex flex-col flex-1 max-h-full gap-4 px-3 pt-1 overflow-hidden"
+		class="relative flex flex-col flex-1 max-h-full gap-4 px-3 pt-2 overflow-hidden"
 	>
 		<SidebarLink title="Dashboard" :href="route('dashboard')" :active="route().current('dashboard')">
 			<template #icon>
@@ -12,6 +12,11 @@
 		<SidebarLink title="Users" :href="route('users')" :active="route().current('users')">
 			<template #icon>
 				<UserGroupIcon class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
+			</template>
+		</SidebarLink>
+		<SidebarLink title="Products" :href="route('products')" :active="route().current('products')">
+			<template #icon>
+				<ShoppingBagIcon class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
 			</template>
 		</SidebarLink>
 
@@ -24,7 +29,11 @@
 <script>
 import PerfrectScrollbar from "@/Components/PerfectScrollbar.vue";
 import SidebarLink from "@/Components/SidebarLink.vue";
-import { HomeIcon, UserGroupIcon } from "@heroicons/vue/outline";
+import {
+	HomeIcon,
+	UserGroupIcon,
+	ShoppingBagIcon,
+} from "@heroicons/vue/outline";
 
 import SidebarCollapsible from "@/Components/SidebarCollapsible.vue";
 import SidebarCollapsibleItem from "@/Components/SidebarCollapsibleItem.vue";
@@ -37,6 +46,7 @@ export default {
 		SidebarLink,
 		SidebarCollapsible,
 		SidebarCollapsibleItem,
+		ShoppingBagIcon,
 	},
 };
 </script>

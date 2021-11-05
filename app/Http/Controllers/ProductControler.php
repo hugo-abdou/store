@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\User;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
-class UserController extends Controller
+class ProductControler extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,9 +14,7 @@ class UserController extends Controller
      */
     public function index()
     {
-        return Inertia::render('Users/UsersList', [
-            'users' => fn() => User::take(10)->get(),
-        ]);
+        return Inertia::render('Products/ProductsList');
     }
 
     /**

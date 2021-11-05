@@ -28,7 +28,7 @@
 		:class="[
             'p-2 w-full flex items-center gap-2 rounded-md transition-colors',
             {
-                'text-gray-400 hover:text-gray-500 hover:bg-gray-100 dark:hover:text-gray-300 dark:hover:bg-dark-eval-2':
+                'text-gray-500 hover:text-gray-500 hover:bg-gray-100 dark:hover:text-gray-300 dark:hover:bg-dark-eval-2':
                     !active,
                 'text-white bg-purple-500 shadow-lg hover:bg-purple-600':
                     active,

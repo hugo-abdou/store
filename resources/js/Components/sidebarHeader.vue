@@ -3,14 +3,11 @@
 		<Link :href="route('dashboard')" class="inline-flex items-center gap-2">
 			<span class="sr-only">K-UI</span>
 
-			<ApplicationLogo aria-hidden="true" class="min-w-[12rem] h-auto" />
+			<ApplicationLogo aria-hidden="true" class="ml-1 w-[11rem]" />
 		</Link>
 
-		<Button
-			iconOnly
-			variant="secondary"
-			type="button"
-			v-slot="{ iconSizeClasses }"
+		<div
+			class="w-7 cursor-pointer dark:text-gray-200 text-gray-500"
 			v-show="sidebarState.isOpen || sidebarState.isHovered"
 			@click="sidebarState.isOpen = !sidebarState.isOpen"
 			:srText="sidebarState.isOpen ? 'Close sidebar' : 'Open sidebar'"
@@ -20,13 +17,13 @@
 				fill="none"
 				stroke="currentColor"
 				stroke-width="2"
-				:class="['hidden hover:text-indigo-400 lg:block', iconSizeClasses]"
+				:class="['hidden hover:text-indigo-400 lg:block']"
 			>
 				<circle cx="12" cy="12" r="8" />
 				<circle v-show="sidebarState.isOpen" cx="12" cy="12" r="3" />
 			</svg>
-			<XIcon aria-hidden="true" v-show="sidebarState.isOpen" :class="['lg:hidden', iconSizeClasses]" />
-		</Button>
+			<XIcon aria-hidden="true" v-show="sidebarState.isOpen" :class="['lg:hidden']" />
+		</div>
 	</div>
 </template>
 
