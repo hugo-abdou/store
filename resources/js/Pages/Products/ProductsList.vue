@@ -1,8 +1,14 @@
 <template>
 	<Head title="Products" />
-
 	<BreezeAuthenticatedLayout>
-		<template #header>Products</template>
+		<template #header>
+			<div class="flex items-center justify-between">
+				<span>Products</span>
+				<div>
+					<Button :href="route('products.create')" variant="primary">Create</Button>
+				</div>
+			</div>
+		</template>
 		<card class="!p-0">
 			<m-table :data="products" :fields="fields" />
 		</card>
@@ -15,6 +21,7 @@ import { Head } from "@inertiajs/inertia-vue3";
 import Card from "@/Components/Card.vue";
 import MTable from "@/Components/Table/MTable.vue";
 import useGetProducts from "@/Composables/useGetProducts";
+import Button from "@/Components/Button.vue";
 
 export default {
 	components: {
@@ -22,6 +29,7 @@ export default {
 		Head,
 		Card,
 		MTable,
+		Button,
 	},
 	setup() {
 		const { fields, products } = useGetProducts();

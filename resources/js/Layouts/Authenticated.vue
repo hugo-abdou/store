@@ -33,7 +33,7 @@
             		}
 				]"
 			>
-				<div class="py-12">
+				<div class="py-1">
 					<div class="max-w-7xl mx-auto px-2">
 						<slot />
 					</div>

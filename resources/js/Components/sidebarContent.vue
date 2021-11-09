@@ -14,7 +14,11 @@
 				<UserGroupIcon class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
 			</template>
 		</SidebarLink>
-		<SidebarLink title="Products" :href="route('products')" :active="route().current('products')">
+		<SidebarLink
+			title="Products"
+			:href="route('products.index')"
+			:active="route().current('products.index')"
+		>
 			<template #icon>
 				<ShoppingBagIcon class="flex-shrink-0 w-6 h-6" aria-hidden="true" />
 			</template>

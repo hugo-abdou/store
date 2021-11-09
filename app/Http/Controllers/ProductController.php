@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Inertia\Inertia;
 
-class ProductControler extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,9 @@ class ProductControler extends Controller
      */
     public function index()
     {
-        return Inertia::render('Products/ProductsList');
+        return Inertia::render('Products/ProductsList', [
+            'products' => fn() => Product::take(100)->get(),
+        ]);
     }
 
     /**
@@ -24,7 +27,7 @@ class ProductControler extends Controller
      */
     public function create()
     {
-        //
+        return Inertia::render('Products/CreateProduct');
     }
 
     /**

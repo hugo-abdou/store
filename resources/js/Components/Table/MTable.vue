@@ -7,7 +7,7 @@
 					<template v-for="(field, index) in fields" :key="index">
 						<th
 							scope="col"
-							class="px-6 py-3 text-left text-xs font-medium text-gray-500 dark:text-gray-300 uppercase tracking-wider"
+							class="px-6 py-3 text-left font-medium text-gray-500 dark:text-gray-300 capitalize tracking-wider"
 						>
 							<slot
 								:name="`head(${field.key})`"
@@ -24,30 +24,32 @@
 					</template>
 				</tr>
 			</thead>
-			<tbody class="bg-white dark:bg-dark-eval-3 divide-y divide-gray-200 dark:divide-dark-eval-1">
+			<tbody class="dark:bg-dark-eval-3 divide-y divide-gray-200 dark:divide-dark-eval-1">
 				<tr v-if="!data.length">
 					<td
 						class="px-6 py-4 whitespace-nowrap text-gray-500 dark:text-gray-200 text-center"
 						colspan="12"
 					>no records found</td>
 				</tr>
-				<tr v-else v-for="(row,index) in data" :key="index">
-					<template v-for="(field, index) in fields" :key="index">
-						<td class="px-6 py-3 text-left text-gray-500 dark:text-gray-300 tracking-wider">
-							<slot
-								:name="`cell(${field.key})`"
-								:row="{...row,index, value: row[field.name]}"
-								v-if="$slots[`cell(${field.key})`]"
-							/>
-							<slot
-								v-else-if="$slots['cell()']"
-								:row="{...row,index,value: row[field.name]}"
-								:name="`cell()`"
-							/>
-							<span v-else>{{row[field.name]}}</span>
-						</td>
-					</template>
-				</tr>
+				<template v-else>
+					<tr v-for="(row,index) in data" :key="index">
+						<template v-for="(field, index) in fields" :key="index">
+							<td class="px-6 py-3 text-left text-gray-500 dark:text-gray-300 tracking-wider">
+								<slot
+									:name="`cell(${field.key})`"
+									:row="{...row,index, value: row[field.name]}"
+									v-if="$slots[`cell(${field.key})`]"
+								/>
+								<slot
+									v-else-if="$slots['cell()']"
+									:row="{...row,index,value: row[field.name]}"
+									:name="`cell()`"
+								/>
+								<span v-else>{{row[field.name]}}</span>
+							</td>
+						</template>
+					</tr>
+				</template>
 			</tbody>
 		</table>
 	</PerfrectScrollbar>
@@ -66,3 +68,8 @@ export default {
 	},
 };
 </script>
+<style>
+tbody > :nth-child(even) {
+	@apply bg-gray-50 dark:bg-dark-eval-1;
+}
+</style>
